@@ -102,8 +102,6 @@ def main():
     i = Image.open(imageLocation)
     i.thumbnail((50, 50), Image.ANTIALIAS)
     iar = np.array(i)
-    plt.imshow(iar)
-    plt.show()
     iar = threshold(iar)
     featurizedImage = featurize(iar)
     prediction = clf.predict(np.reshape(featurizedImage, (1,-1)))
@@ -119,19 +117,19 @@ def main():
         print "Dollar"
 
     #For testing overall accuracy
-    outfile = open("outt.txt", "w")
-    correct = 0
-    wrong = 0
-    total = 0
-    for i in data:
-        correct += 1
-        for j in i:
-            total += 1
-            prediction = clf.predict(np.reshape(j, (1,-1)))
-            if prediction != correct:
-                wrong += 1
-            outfile.write(str(prediction))
-    print wrong
-    print total
+    # outfile = open("outt.txt", "w")
+    # correct = 0
+    # wrong = 0
+    # total = 0
+    # for i in data:
+    #     correct += 1
+    #     for j in i:
+    #         total += 1
+    #         prediction = clf.predict(np.reshape(j, (1,-1)))
+    #         if prediction != correct:
+    #             wrong += 1
+    #         outfile.write(str(prediction))
+    # print wrong
+    # print total
 
 main()
