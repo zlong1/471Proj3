@@ -1,0 +1,17 @@
+\documentclass{article}
+\title{CMSC 471 Project 3}
+\author{Zach Long}
+\date{April 29, 2016}
+\usepackage{graphicx}
+\begin{document}
+   \maketitle
+   \section{Image Recognition}
+   My approach for this project is a fairly straightforward one. We start by resizing images down to 50x50 for consistency. Then, we create a 3d pixel array for the image, and then apply our threshold function to, which averages out the array, replacing any pixels that are lower than the average darkness with pure white and pure black for any at or above the threshold. From there, we convert the thresholded pixel array into a 1d array, where 0s are our white pixels and 1s are our black pixels. We use this as our featurized data. For training, we simply fit our data with Python's built in support vector machine, and we're done! I left out the back 10 images of each data set to use as a training set, and the svm was able to identify them with 90\% accuracy, getting only 5 wrong. Overall that is immpressively accurate for how little setup it took.
+
+   \begin{figure}[h!]
+      \includegraphics[width=\linewidth]{threshold.png}
+      \caption{An image before and after thresholding}
+      \label{fig:graph1}
+   \end{figure}
+
+\end{document}

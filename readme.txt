@@ -1,0 +1,1 @@
+As long as the import statements work, running should be simple so long as "featurized_data.npy" is in the same folder as the program. Images must also be at least 50x50 in size, and the filepath to the jpg to identify must be passed as the first argument of the program.
